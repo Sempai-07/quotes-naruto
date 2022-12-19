@@ -1,0 +1,16 @@
+const getQuotes = new Object({
+   gaara: ["A person needs a reason to exist, otherwise life will be no different from death", "The dearest person doesn't have to be good.\n— Really?  Then how can a bad person be dear to you?\n—Even if you know that he is evil himself, a person still cannot overcome loneliness", "It is love, hate, happiness, fear, loneliness... all these feelings unite  people together...", "I was born a monster, I was born through technology, I was a trump card, I was a threat, I was dangerous!  I am a shadow of the past that they want to get rid of... Why do I exist and live?  I repeatedly asked myself, but could not find the answer.  After all, to live, you need a reason, otherwise it's the same as being dead.  And that's what I decided.  I live to kill others.  I was able to understand the reasons why I live.  I fight only for myself and love only myself.  As long as I believe that all other people exist for this, the world is beautiful.  While I kill others, enjoying my existence, I continue to live ...", "If life has kicked you in the ass and hatred has settled in your heart - do not give in to it and never try to take revenge on those who hurt you", "Loneliness is the most unbearable  suffering in the world...", "I consider you my friend.  Previously, the word 'friend' meant nothing to me, it was just one of many such words.  But after meeting you, I realized how great its significance is.  Think about it and what you can actually do for Sasuke.", "But there are things you can't mistake for anything.  My love for you was so huge, radiant, as if ... breaking out of my body, I was not able to silently carry it in myself, it burst out like a cry of joy, like ... light.  See?", "Love is not a feeling.  It is not an emotion, not an experience, not a craving, not a kinship hunger.  Love is an element.  I gave my word to love you, and I will not back down from it.", "The world born of illusion is just a lie.  The world has meaning only when it is created in reality."],
+   info: ({
+   description: "Gaara (我愛羅) is a Shinobi of the Hidden Sand Village. Even before he was born, he was turned into the One-Tailed Shukaku jinchūriki by the Sand Village elder Chiyo and his father, Rasa. Because of this, the Sand people feared him and considered him a monster. None  Gaara grew up with a hatred for the world and cared only for himself, justifying his existence by killing everyone who gets in his way.  a few years later, he becomes the Fifth Kazekage (五代目風影, Godaime Kazekage, lit. Fifth Wind Shadow) to protect the Sand Village and its inhabitants, as well as dispel the fear of himself",
+   clan: "Kazekage (Only in the novel)",
+   status: "Alive",
+   date: "January 19",
+   growth: "Part I: 146.1-148.1 cm\nPart II: 166.1 cm",
+   weight: "Part I: 39-40.2 kg\nPart II: 50.9 kg",
+   element: "Wind, magnetism (Novel only), lightning, earth",
+   rank: "Part I: Genin\nPart II: Kage",
+   family: "Karura (Mother)\nRace (Father)\nTemari (Older Sister)\nKankuro (Older Brother)\nYashamaru (Uncle)\nShikamaru Nara (Son-in-Law)\nShinki (Adopted Son)\nShikadai Nara (Nephew)"
+ })
+ });
+
+ module.exports = getQuotes;
