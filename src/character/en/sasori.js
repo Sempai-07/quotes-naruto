@@ -1,16 +1,16 @@
 const getQuotes = new Object({
-  sasori: ["Качество куда важнее количества", "Наша ошибка в том, что мы смотрим на смерть как на будущее событие. Большая часть смерти уже наступила: то время, что за нами, — в ее владении", "Когда ты умираешь, все твои проблемы уходят, остается лишь одна — назад пути нет", "Искусство — это проверенное временем красота и изящество. Вечная красота. Вот настоящее искусство", "Эмоции могут толкнуть на такие ужасные вещи, на которые не способны ни циничный ум, ни холодный расчёт", "Ненависть к окружающим — естественнейшее человеческое чувство. Естественнее только ненависть к самому себе. Лишившись ненависти, люди перестанут быть людьми."],
-  info: ({
-  description: "Сасори (яп. サソリ, Сасори), также известный как Сасори Красного Песка (яп. 赤砂のサソリ, Акасуна но Сасори), был ниндзя-отступником S-ранга из Отряда Кукловодов Деревни Скрытого Песка и членом Акацуки, где он был партнёром Орочимару и, позже, Дейдары.",
-  clan: undefined,
-  status: "Мёртв",
-  date: "8 Ноября",
-  growth: "Часть II: 164,1 см",
-  weight: "Часть II: 47,3 кг",
-  element: undefined,
-  rank: "Ранг-S",
-  family: "Мать Сасори (Мать)\nОтец Сасори (Отец)\nЧиё (Бабушка)\nЭбизо (Двоюродный Дедушка)"
-})
-});
+   sasori: ['Quality is more important than quantity', 'Our mistake is that we look at death as a future event.  Most of death has already come: the time that is behind us is in its possession', 'When you die, all your problems go away, only one remains - there is no way back', 'Art is time-tested beauty and grace.  Eternal beauty.  This is real art', 'Emotions can push to such terrible things that neither a cynical mind nor a cold calculation is capable of', 'Hatred of others is the most natural human feeling.  More natural than self-hatred.  Without hatred, people will cease to be people.'],
+   info: ({
+   description: "Sasori (サソリ, Sasori), also known as Red Sand Sasori (赤砂のサソリ, Akasuna no Sasori), was an S-rank renegade ninja from the Hidden Sand Village's Puppet Master Squad and a member of the Akatsuki where he  partnered with Orochimaru and later with Deidara.",
+   clan: undefined,
+   status: "Dead",
+   date: "November 8",
+   growth: "Part II: 164.1 cm",
+   weight: "Part II: 47.3 kg",
+   element: undefined,
+   rank: "Rank-S",
+   family: "Sasori's Mother (Mother)\nSasori's Father (Father)\nChiyo (Grandmother)\nEbizo (Great Uncle)"
+ })
+ });
 
-module.exports = getQuotes;
+ module.exports = getQuotes;
