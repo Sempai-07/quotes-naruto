@@ -3,7 +3,7 @@
 
 ### Установка
 ```js
-$ npm install quotes-naruto@0.0.10
+$ npm install quotes-naruto@0.0.11
 $ npm install database-sempai@1.0.0
 ```
 
