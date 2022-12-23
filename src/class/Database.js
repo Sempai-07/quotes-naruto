@@ -5,65 +5,59 @@ class Database {
   constructor(options) {
     this.log = options.log || false,
     this.path = options.path || ["./database"];
-    if (options.log === false) {
+    if (this.log === false) {
     } else {
-    console.log(options.log)
+      console.log(this.log);
     }
   }
   
-  addQuotes(name, content) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main", {
-    path: this.path,
-    //encryption: "key here"
-    })
-      db.set(name, `${db.get(name).value}#new#${content}`);
+   addQuotes(name, content) {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    if (db.has('custom', name) === false) {
+    db.set('custom', name, `${content}`);
+    } else {
+    db.set('custom', name, `${db.get('custom', name)}#new#${content}`);
+    }
   }
   
-   setQuotes(name, content) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main", {
-    path: this.path,
-    //encryption: "key here"
-    })
-      db.set(name, content);
+  setQuotes(name, content) {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    db.set('custom', name, content);
   }
 
   deleteQuetes(name) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main",{
-    path: this.path,
-    //encryption: "key here"
-    })
-      db.delete(name);
-  }
-
-  editContentQuetes(name, newContent) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main",{
-    path: this.path,
-    //encryption: "key here"
-    })
-      db.set(name, newContent);
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    db.delete('custom', name);
   }
   
  editNameQuetes(newName, oldName) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main",{
-    path: this.path,
-    //encryption: "key here"
-    })
-      db.set(newName, db.get(oldName).value);
-      db.delete(oldName);
+   const { Create } = require('database-sempai');
+   const db = new Create({
+     path: this.path,
+     table: ["custom"]
+   });
+   db.editName('custom', oldName, newName);
   }
   
   isCustomQuetes(name) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main",{
-    path: this.path,
-    //encryption: "key here"
-    })
-    if (db.has(name)) {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    if (db.has('custom', name)) {
       return true;
     } else {
       return false;
@@ -71,19 +65,20 @@ class Database {
   }
   
   quetesName(name) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main",{
-    path: this.path,
-    //encryption: "key here"
-    })
-    if (db.has(name)) {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    if (db.has('custom', name)) {
       try {
-        let textSplit = (db.get(name).value).split('#new#');
-        let getSplit = textSplit.length;
-        let random = randomNumbers(1, getSplit);
+        let content = db.get('custom', name);
+        let textSplit = content.split('#new#');
+        let getSplit = textSplit.length - 1;
+        let random = randomNumbers(0, getSplit);
         return textSplit[random];
       } catch (e) {
-        return db.get(name).value;
+        return db.get('custom', name, true).value;
       }
     } else {
       return undefined;
@@ -91,16 +86,43 @@ class Database {
   }
   
   quetesNameContent(name) {
-    const Db = require('json-db-easier')
-    const db = new Db.Create("main",{
-    path: this.path,
-    //encryption: "key here"
-    })
-      return db.get(name).value;
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    return db.get('custom', name);
+  }
+  
+  quetesJSON() {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    return db.all('custom');
+  }
+  
+  quetesDeleteAll() {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    db.deleteAll('custom');
+  }
+  
+  ping() {
+    const { Create } = require('database-sempai');
+    const db = new Create({
+      path: this.path,
+      table: ["custom"]
+    });
+    return db.ping();
   }
  
   savedb(name = "copy.json") {
-    let content = fs.readFileSync(`${this.path}/main/db.json`, 'utf-8');
+    let content = fs.readFileSync(`${this.path}/custom/storage.json`, 'utf-8');
     fs.writeFileSync(name, content);
   }
 }
