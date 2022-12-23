@@ -1,10 +1,10 @@
 <h1 align="center">quotes-naruto</h1>
-Эта новый пакет в котром собрание все цитаты персонажей Наруто на русском/английском языке (на данный момент не все). Также цитаты брались с данного сайта: <a href=" https://citaty.info">Citaty.info</a>. Информация о изменении в <a href="https://github.com/Sempai-07/quotes-naruto">quotes-naruto@0.0.7/8, quotes-naruto@0.0.9/10<a/>
+Эта новый пакет в котром собрание все цитаты персонажей Наруто на русском/английском языке (на данный момент не все). Также цитаты брались с данного сайта: <a href=" https://citaty.info">Citaty.info</a>. Информация о изменении в <a href="https://github.com/Sempai-07/quotes-naruto">quotes-naruto@0.0.11<a/>
 
 ### Установка
 ```js
 $ npm install quotes-naruto@0.0.10
-$ npm install json-db-easier@3.2.0
+$ npm install database-sempai@1.0.0
 ```
 
 ### Пример с обычными функциями
@@ -25,10 +25,7 @@ const db = new Database({
 
 db.setQuotes("sempai", "Люди")
 db.editNameQuetes("name", "sempai")
-setTimeout(() => {
-  console.log(db.quetesNameContent("name"))
-}, 1000);
-// В противном случае undefined
+console.log(db.quetesNameContent("name"))
 
 db.addQuotes("name", "Хз")
 console.log(db.quetesNameContent("name"))
@@ -137,13 +134,11 @@ db.editNameQuetes('newName', 'oldName')
 Меняет название переменной. Если вы изменили название переменной, данные которые были вписаны в старую не пропадут они просто будут под новым названием...
 - `newName` - новое название переменной
 - `oldName` - старое название переменной
-#### customQuetesEditContent()
+#### quetesJSON()
 ```js
-db.editContentQuetes('name', 'new content')
+db.quetesJSON()
 ```
-Меняет контент переменной
-- `name` - название переменной в которой мы будем менять содержимое
-- `new content` - новое содержимое переменной
+Выдаст все переменные и их содержимое в формате json
 #### quetesName()
 ```js
 db.quetesName('name')
@@ -173,21 +168,30 @@ db.quetesDelete('name')
 ```
 Удалит переменною
 - `name` - название переменной которою хотите удалить
-
-<h1 align="center">quotesNaruto-naruto</h1>
- This new pack contains all Naruto character quotes in Russian/English (not all at the moment).  Also quotes were taken from this site: <a href=" https://citaty.info">Citaty.info</a>.  Change info in <a href="https://github.com/Sempai-07/quotes-naruto">quotes-naruto@0.0.7/8, quotes-naruto@  0.0.9/10</a>
+#### quetesDeleteAll()
+```js
+quetesDeleteAll()
+```
+Удалит все переменные
+#### ping()
+```js
+ping()
+```
+Покажет задержку в ms
+<h1 align="center">quotes-naruto</h1>
+ This new pack contains all Naruto character quotes in Russian/English (not all at the moment).  Also quotes were taken from this site: <a href=" https://citaty.info">Citaty.info</a>.  Change info in <a href="https://github.com/Sempai-07/quotes-naruto">quotes-naruto@0.0.11</a>
 
  ### Installation
  ```js
- $ npm install quotes-naruto@0.0.10
- $ npm install json-db-easier@3.2.0
+ $ npm install quotes-naruto@0.0.11
+ $ npm install database-sempai@1.0.0
  ```
 
  ### Example with normal functions
  ```js
  const quotesNaruto = require('quotes-naruto');
 
- let text = quotesNaruto.queotesCharacterName('itachi', 'ru');
+ let text = quotesNaruto.queotesCharacterName('itachi', 'en');
  console.log(`Itachi: ${text}`);
  ```
  ### Database connections
@@ -201,9 +205,7 @@ db.quetesDelete('name')
 
  db.setQuotes("sempai", "People")
  db.editNameQuetes("name", "sempai")
- setTimeout(() => {
-   console.log(db.quetesNameContent("name"))
- }, 1000);
+console.log(db.quetesNameContent("name"))
  // otherwise undefined
 
  db.addQuotes("name", "Xs")
@@ -308,18 +310,16 @@ db.quetesDelete('name')
  Will completely change the contents of the variable
  #### editNameQuets()
  ```js
- db.editNameQuets('newName', 'oldName')
+ db.editNameQuetes('newName', 'oldName')
  ```
  Changes the name of a variable.  If you change the name of the variable, the data that was entered into the old one will not be lost, they will simply be under the new name...
  - `newName` - new variable name
  - `oldName` - old variable name
- #### customQuetsEditContent()
- ```js
- db.editContentQuetes('name', 'new content')
- ```
- Changes the content of a variable
- - `name` - the name of the variable in which we will change the content
- - `new content` - new content of the variable
+#### quetesJSON()
+```js
+db.quetesJSON()
+```
+Will return all variables and their content in json format
  #### quetesName()
  ```js
  db.quetesName('name')
@@ -349,3 +349,13 @@ db.quetesDelete('name')
  ```
  Delete variable
  - `name` - the name of the variable you want to delete
+#### quetesDeleteAll()
+```js
+quetesDeleteAll()
+```
+Remove all variables
+#### ping()
+```js
+ping()
+```
+Show delay in ms
