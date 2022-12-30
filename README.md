@@ -1,4 +1,9 @@
-<h1 align="center">quotes-naruto</h1>
+<h1 align="center">Quotes naruto</h1>
+
+[![Discord Server](https://img.shields.io/discord/796504104565211187?color=7289da&logo=discord&logoColor=white)](https://discord.gg/EuSbT5HH8b)
+[![NPM Version](https://img.shields.io/npm/v/quotes-naruto.svg?maxAge=3600)](https://www.npmjs.com/package/quotes-naruto)
+[![NPM Downloads](https://img.shields.io/npm/dt/quotes-naruto.svg?maxAge=3600)](https://www.npmjs.com/package/quotes-naruto)
+
 Эта новый пакет в котром собрание все цитаты персонажей Наруто на русском/английском языке (на данный момент не все). Также цитаты брались с данного сайта: <a href=" https://citaty.info">Citaty.info</a>. Информация о изменении в <a href="https://github.com/Sempai-07/quotes-naruto">quotes-naruto@0.0.11<a/>
 
 ### Установка
