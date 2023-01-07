@@ -8,8 +8,8 @@
 
 ### Установка
 ```js
-$ npm install quotes-naruto@0.0.11
-$ npm install database-sempai@1.0.0
+$ npm install quotes-naruto@0.0.12
+$ npm install database-sempai@2.0.3
 ```
 
 ### Пример с обычными функциями
@@ -28,15 +28,9 @@ const db = new Database({
   path: "./database" // название папки
 })
 
-db.setQuotes("sempai", "Люди")
-db.editNameQuetes("name", "sempai")
-console.log(db.quetesNameContent("name"))
-
 db.addQuotes("name", "Хз")
 console.log(db.quetesNameContent("name"))
 // Люди#new#Хз
-db.savedb("./index.json")
-// Создать копию базы данных
 ```
 Если вы не подключите дб, функции которые связаны с кастом цитатами не будут работать.
 
@@ -132,13 +126,7 @@ console.log(db.quetesName('sempai'))
 db.setQuotes('name', 'new content')
 ```
 Полностью изменит содержимое переменной
-#### editNameQuetes()
-```js
-db.editNameQuetes('newName', 'oldName')
-```
-Меняет название переменной. Если вы изменили название переменной, данные которые были вписаны в старую не пропадут они просто будут под новым названием...
-- `newName` - новое название переменной
-- `oldName` - старое название переменной
+
 #### quetesJSON()
 ```js
 db.quetesJSON()
@@ -161,12 +149,6 @@ db.isCustomQuetes('name')
 ```
 - `name` - название переменнои,
 Вернёт `true` - если переменная существует, `false` - если переменная не существует
-#### savedb()
-```js
-savedb('path')
-```
-- `path` - название файла/путь
-Создаёт резервную копию базу данных
 #### quetesDelete()
 ```js
 db.quetesDelete('name')
@@ -208,16 +190,9 @@ ping()
    path: "./database" // folder name
  })
 
- db.setQuotes("sempai", "People")
- db.editNameQuetes("name", "sempai")
-console.log(db.quetesNameContent("name"))
- // otherwise undefined
-
  db.addQuotes("name", "Xs")
  console.log(db.quetesNameContent("name"))
  // People#new#Xs
- db.savedb("./index.json")
- // Create a copy of the database
  ```
  If you don't include a db, the functions that are related to custom quotes won't work.
 
@@ -313,13 +288,6 @@ console.log(db.quetesNameContent("name"))
  db.setQuotes('name', 'new content')
  ```
  Will completely change the contents of the variable
- #### editNameQuets()
- ```js
- db.editNameQuetes('newName', 'oldName')
- ```
- Changes the name of a variable.  If you change the name of the variable, the data that was entered into the old one will not be lost, they will simply be under the new name...
- - `newName` - new variable name
- - `oldName` - old variable name
 #### quetesJSON()
 ```js
 db.quetesJSON()
@@ -342,12 +310,6 @@ Will return all variables and their content in json format
  ```
  - `name` - variable name,
  Returns `true` if the variable exists, `false` if the variable does not exist
- #### savedb()
- ```js
- savedb('path')
- ```
- - `path` - filename/path
- Creates a database backup
  #### quetesDelete()
  ```js
  db.quetesDelete('name')
